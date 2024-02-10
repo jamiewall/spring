@@ -35,7 +35,6 @@ public:
 	void SlowUpdate() override;
 	void UpdatePreCollisionsMt() override;
 	void UpdateCollisionDetections() override;
-	void ProcessCollisionEvents() override;
 
 	void UpdateObstacleAvoidance();
 	void UpdatePreCollisions() override;
@@ -279,12 +278,6 @@ private:
 	bool positionStuck = false;
 	bool forceStaticObjectCheck = false;
 	bool avoidingUnits = false;
-
-	std::vector<CFeature*> collidedFeatures;
-	std::vector<CUnit*> collidedUnits;
-	std::vector<CFeature*> killFeatures;
-	std::vector<CUnit*> killUnits;
-	std::vector<std::tuple<CFeature*, float3>> moveFeatures;
 };
 
 #endif // GROUNDMOVETYPE_H
